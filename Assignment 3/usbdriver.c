@@ -230,7 +230,7 @@ static int probe_func(struct usb_interface * interface,const struct usb_device_i
     globalinterface = interface;	//assigning interface to global variable
     udev = container_of(interface -> dev.parent, struct usb_device, dev); // getting the usb_device pointer
 
-    printk(KERN_INFO "**********************************My Log Begins ************************************************");
+    printk(KERN_INFO "**********************************My Log Begins ***********************************************");
     printk(KERN_INFO "KNOWN USB DRIVE DETECTED\n");
     printk(KERN_INFO "Vendor ID = %#06x \n", udev -> descriptor.idVendor); //using udev to get to the device descriptor for VID
     printk(KERN_INFO "Product ID = %#06x \n", udev -> descriptor.idProduct); //using udev to get to the device descriptor for PID
@@ -570,7 +570,7 @@ static struct usb_device_id usbdev_table[] = {
 
 static struct usb_driver usbdev_driver = {
       name: "usbdev", 								//name of the device
-      probe: probe_func, 							// Whenever Device is plugged in
+      probe: probe_func, 							// Whenever Device is plugged iN
       disconnect: disconnect_func, 		// When we remove a device
       id_table: usbdev_table, 				// List of devices served by this driver
 };
